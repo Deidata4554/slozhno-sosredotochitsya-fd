@@ -47,7 +47,6 @@ button,
 span,
 a {
   color: currentColor;
-  font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   font-family: 'IBM Plex Mono', serif;
