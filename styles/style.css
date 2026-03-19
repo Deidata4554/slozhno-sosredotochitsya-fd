@@ -8,7 +8,7 @@
 .header {
   display: grid;
   position: relative;
-  grid-template-rows: min-content min-content 1fr min-content ;
+  grid-template-rows: min-content 1fr min-content ;
   overflow: hidden;
   block-size: 100vh;
   min-block-size: 668px;
@@ -27,7 +27,7 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border: solid var(--accent-color);
+  border: solid var(--title-accent-color);
 }
 
 .decorated-zone::after {
@@ -45,18 +45,20 @@
 }
 
 .header__decor {
-  position: relative;
+  display: var(--decor-rec-status);
+  position: absolute;
   justify-self: end;
-  color:var(--accent-color);
+  color:var(--title-accent-color);
   font-size: 18px;
   line-height: 25px;
   text-align: center;
   margin-block-start: 10px;
   margin-inline-end: 38px;
   margin-block-end: 39px;
+
+  
 }
 
-/* Переделать центрирование по вертикали */
 .header__decor::before {
   content: '';
   block-size: 9px;
@@ -70,17 +72,18 @@
 }
 
 .header__title {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--major-text-size);
   line-height: 83%;
   letter-spacing: 0;
-  /* margin-block-end: 55px; */
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   margin-inline-start: 10px;
+  max-inline-size: 355px;
 }
 
 .header__theme-menu {
   justify-self: end;
+  margin-block-start: 75px;
   margin-block-end: 65px;
   margin-inline-end: 10px;
 }
@@ -98,20 +101,32 @@
   text-align: center;
   background: none;
   border: none;
-  color: var(--accent-color);
+  color: var(--title-accent-color);
   padding-inline: 13px;
   padding-block: 1.5px;
   text-transform: lowercase;
 }
 
+.header__theme-menu-button:hover {
+  border: 1px solid var(--border-transparent);
+}
+
+.header__theme-menu-button:focus {
+  border: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+}
+
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--title-accent-color);
 }
 
 .header__description {
   margin-block-end: 66px;
   font-size: 18px;
-  margin-inline: 10px;
+  margin-inline: var(--page-padding);
 }
 
 .title-decor {
@@ -130,16 +145,23 @@
 
 .section__card {
     padding-inline: var(--page-padding);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
     gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .section__title {
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0;
-  color: var(--accent-color);
+  color: var(--title-accent-color);
 }
 
 .section__card-title {
@@ -147,7 +169,23 @@
   line-height: 23.4px;
   letter-spacing: 0;
   color: var(--text-decore-color);
-  /* margin-block-end: 10px; */
+}
+
+.text-link {
+  text-shadow: 2px 1px var(--accent-color);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.text-link:focus {
+  border: none;
+}
+
+.text-link:focus-visible {
+  border: 1px solid var(--text-color);
 }
 
 .section__card-description {
@@ -163,7 +201,8 @@ h4.section__card-title {
 
 .section__galery {
   display: grid;
-  padding: 0 10px;
+  padding-block: 0;
+  padding-inline: var(--page-padding);
   grid-template-columns: auto;
   gap: 10px;
   margin-block-end: 40px;
@@ -186,13 +225,160 @@ h4.section__card-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 10px; */
 }
 
 .footer__title {
   color: var(--title-color);
   text-shadow: 2px 2px var(--accent-color);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--major-text-size);
   line-height: 83%;
   letter-spacing: 0;
+}
+
+@media (width >= 768px) {
+
+  .header__title {
+    max-inline-size: 577px;
+    margin-inline-start: 0;
+  }
+
+  .header__description {
+    width: 300px;
+    justify-self: end;
+    margin-block-end: 183px;
+  }
+
+  .header__decor {
+    margin-block-start: 20px;
+    margin-block-end: 146px;
+    margin-inline-end: 48px;
+  }
+
+  .header__theme-menu {
+    margin-block-end: 173px;
+    margin-block-start: 192px;
+  }
+
+  .main {
+    gap: 80px;
+  }
+
+  .columns-right__small {
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: repeat(2, min-content);
+  }
+
+  .columns-right__small .section__title {
+    grid-column: 1;
+    grid-row: 1/-1;
+  }
+  
+  .columns-right__big {
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: repeat(6, min-content);
+  }
+
+  .columns-right__big .section__title {
+    grid-column: 1;
+    grid-row: 1/-1;
+  }
+
+  .columns-bottom .section__title {
+    max-inline-size: 236px;
+  }
+
+  .section__galery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content repeat(3, auto);
+    grid-template-areas:
+      "title title title" 
+      "one one two"
+      "three four two"
+      "three five five";
+    gap: 20px;
+  }
+
+  .section__galery-title {
+    grid-area: title;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .image-1 {
+    grid-area: one;
+  }
+
+  .image-2 {
+    grid-area: two;
+  }
+
+  .image-3 {
+    grid-area: three;
+  }
+
+  .image-4 {
+    grid-area: four;
+  }
+
+  .image-5 {
+    grid-area: five;
+  }
+
+}
+
+@media (width >= 1024px) {
+
+  .header {
+    grid-template-rows: min-content 1fr min-content ;
+  }
+
+   .header__title {
+    max-inline-size: 759px;
+    margin-block-end: 114px;
+  }
+
+  .header__description {
+    width: 491px;
+    justify-self: end;
+    margin-block-end: 135px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    margin-block-start: 20px;
+    margin-block-end: 273px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  /* .header__decor {
+  position: absolute;
+  margin-block-end: 0;
+  } */
+
+  .columns-right__small {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .columns-right__big {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .columns-bottom .section__title {
+    max-inline-size: 315px;
+    grid-row: 1;
+    grid-column: 1/-1;
+  }
+
+  .columns-bottom {
+    grid-template-rows: repeat(4, min-content);
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
