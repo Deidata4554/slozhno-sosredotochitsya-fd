@@ -8,7 +8,6 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-attachment: fixed;
 }
 
 .header {
@@ -169,6 +168,12 @@
   line-height: 23.4px;
   letter-spacing: 0;
 }
+
+  .section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
 .text-link {
   text-decoration: none;
