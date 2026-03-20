@@ -28,19 +28,18 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border: solid var(--title-accent-color);
 }
 
 .decorated-zone::after {
-  border-right: 1px;
-  border-top: 1px;
+  border-left: 1px solid var(--title-accent-color);
+  border-bottom: 1px solid var(--title-accent-color);
   bottom: var(--page-padding);
   left: var(--page-padding);
 }
 
 .decorated-zone::before {
-  border-left: 1px;
-  border-bottom: 1px;
+  border-right: 1px solid var(--title-accent-color);
+  border-top: 1px solid var(--title-accent-color);
   top: var(--page-padding);
   right: var(--page-padding);
 }
@@ -244,7 +243,7 @@ h4.section__card-title {
   }
 
   .header__description {
-    width: 300px;
+    max-inline-size: 364px;
     justify-self: end;
     margin-block-end: 183px;
   }
@@ -265,7 +264,7 @@ h4.section__card-title {
   }
 
   .columns-right__small {
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 236px 1fr;
     grid-template-rows: repeat(2, min-content);
   }
 
@@ -275,7 +274,7 @@ h4.section__card-title {
   }
   
   .columns-right__big {
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 236px 1fr;
     grid-template-rows: repeat(6, min-content);
   }
 
@@ -344,7 +343,7 @@ h4.section__card-title {
   }
 
   .header__description {
-    width: 491px;
+    max-inline-size: 491px;
     justify-self: end;
     margin-block-end: 135px;
   }
