@@ -172,7 +172,7 @@
   .section__content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
 
 .text-link {
@@ -267,12 +267,6 @@
 
   .section__card {
     grid-template-rows: none;
-  }
-
-  .section__content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
   }
 
   .section-why {
