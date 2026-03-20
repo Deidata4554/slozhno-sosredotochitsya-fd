@@ -231,6 +231,8 @@ h4.section__card-title {
   justify-content: center;
   align-items: center;
   block-size: 100vh;
+  min-block-size: 668px;
+  min-inline-size: 375px;
 }
 
 .footer__title {
