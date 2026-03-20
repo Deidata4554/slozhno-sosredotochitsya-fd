@@ -11,10 +11,12 @@
   */
   --accent-color: #ff0070;
   --title-accent-color: #ff0070;
+  --button-interactive-color: #ff0070;
+  --title-shadow-color: #ff0070;
   --border-transparent: rgba(255, 0, 112, 0.4);
   --title-color: #db00ff;
   --text-color: #f1b2ce;
-  --text-decore-color: #000028;
+  --text-font-color: #000028;
   --background-color: #000028;
   --background-image: url("../images/cover-image-dark.png");
   --decor-rec-status: block;

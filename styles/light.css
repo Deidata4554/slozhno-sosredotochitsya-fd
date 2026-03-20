@@ -11,9 +11,11 @@
   */
   --accent-color: #ff8dcb;
   --title-accent-color: #353430;
+  --button-interactive-color: #353430;
+  --title-shadow-color: #ff8dcb;
   --title-color: #ffc2e6;
   --text-color: #353430;
-  --text-decore-color: #353430;
+   --text-font-color: #353430;
   --border-transparent: rgba(53, 52, 48, 0.4);
   --background-color: #fff1f7;
   --background-image: url("../images/cover-image-light.png");
@@ -23,14 +25,16 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --accent-color: #ff8dcb;
-    --title-accent-color: #353430;
-    --title-color: #ffc2e6;
-    --text-color: #353430;
-    --text-decore-color: #353430;
-    --border-transparent: rgba(53, 52, 48, 0.4);
-    --background-color: #fff1f7;
-    --background-image: url("../images/cover-image-light.png");
+  --accent-color: #ff8dcb;
+  --title-accent-color: #353430;
+  --button-interactive-color: #353430;
+  --title-shadow-color: #ff8dcb;
+  --title-color: #ffc2e6;
+  --text-color: #353430;
+   --text-font-color: #353430;
+  --border-transparent: rgba(53, 52, 48, 0.4);
+  --background-color: #fff1f7;
+  --background-image: url("../images/cover-image-light.png");
 
     --decor-rec-status: none;
   }
